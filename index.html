@@ -18,7 +18,6 @@
       src="https://kit.fontawesome.com/622af6dfc3.js"
       crossorigin="anonymous"
     ></script>
-    <link href="src/styles.css" />
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
@@ -29,12 +28,12 @@
         <div class="weather-app">
           <div class="row">
             <div class="col-4">
-              <h1>
+              <h3>
                 <ul>
-                  <li>July 27, 2021</li>
-                  <li>TUE 21:27</li>
+                  <li id="current-date">July 27, 2021</li>
+                  <li id="current-time">TUE 21:27</li>
                 </ul>
-              </h1>
+              </h3>
             </div>
             <div class="col-8">
               <div class="current-weather-icon">
@@ -43,21 +42,25 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-4"><h2>Frankfurt am Main</h2></div>
+            <div class="col-4">
+              <h1 id="current-city"></h1>
+            </div>
             <div class="col-3">
               <ul>
                 <h2>
-                  <li>17 <span class="units">°C | °F</span></li>
-                  <li>Clear</li>
+                  <li>
+                    <span id="current-temperature"></span
+                    ><span class="units"> °C | °F</span>
+                  </li>
+                  <li id="weather-description"></li>
                 </h2>
               </ul>
             </div>
             <div class="col-5">
               <ul>
-                <li>17 °C | 20 ° C</li>
-                <li>Precipitation: 0 %</li>
-                <li>Humidity: 73 %</li>
-                <li>Wind: 2 km/h</li>
+                <li id="temperature-span"></li>
+                <li>Humidity: <span id="humidity"></span> %</li>
+                <li>Wind: <span id="wind"></span> km/h</li>
               </ul>
             </div>
           </div>
