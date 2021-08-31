@@ -23,6 +23,9 @@ li {
   list-style: none;
   margin: 5px;
   padding: 0;
+}
+
+li:first-letter {
   text-transform: capitalize;
 }
 

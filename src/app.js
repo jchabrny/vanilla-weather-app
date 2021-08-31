@@ -1,3 +1,38 @@
+function formatDate(date) {
+  let days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
+  let currentYear = date.getFullYear();
+  let currentDay = days[date.getDay()];
+  let currentMonth = months[date.getMonth()];
+  let currentDate = date.getDate();
+  let currentHour = (date.getHours() < 10 ? "0" : "") + date.getHours();
+  let currentMinutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
+
+  return `
+                  <ul>
+                  <li>${currentMonth} ${currentDate}, ${currentYear}</li>
+                  <li>${currentDay} ${currentHour}:${currentMinutes}</li>
+                </ul>`;
+}
+
+let now = new Date();
+let date = document.querySelector("#date");
+date.innerHTML = formatDate(now);
+
 function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
   document.querySelector("#current-temperature").innerHTML = Math.round(
