@@ -29,6 +29,14 @@ li:first-letter {
   text-transform: capitalize;
 }
 
+img {
+  opacity: 0.8;
+  width: 370px;
+  position: relative;
+  top: 30px;
+  left: -140px;
+}
+
 .weather-app-wrapper {
   max-width: 600 px;
   margin: 30px auto;
@@ -43,15 +51,6 @@ li:first-letter {
   background-position: bottom;
   color: lightblue;
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
-}
-
-.current-weather-icon {
-  font-size: 250px;
-  color: pink;
-  opacity: 0.5;
-  position: relative;
-  right: 90px;
-  top: 20px;
 }
 
 .units {
