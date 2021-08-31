@@ -1,8 +1,6 @@
 body {
   font-family: "Amatic SC", cursive;
   font-family: "Spartan", sans-serif;
-  color: lightblue;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 h1,
@@ -23,17 +21,37 @@ ul {
 
 li {
   list-style: none;
-  margin: 0;
+  margin: 5px;
   padding: 0;
 }
 
-.weather-app {
+.weather-app-wrapper {
   max-width: 600 px;
   margin: 30px auto;
+}
+
+.weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
   border-radius: 5px;
   background-image: url(../images/canyon.jpg);
   background-size: cover;
   background-position: bottom;
+  color: lightblue;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+
+.current-weather-icon {
+  font-size: 250px;
+  color: pink;
+  opacity: 0.5;
+  position: relative;
+  right: 90px;
+  top: 20px;
+}
+
+.units {
+  position: relative;
+  font-size: 16px;
+  top: -12px;
 }
