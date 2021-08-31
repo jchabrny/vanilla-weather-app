@@ -37,6 +37,10 @@ img {
   left: -140px;
 }
 
+a {
+  text-decoration: none;
+}
+
 .weather-app-wrapper {
   max-width: 600 px;
   margin: 30px auto;
@@ -68,4 +72,9 @@ img {
   position: relative;
   font-size: 16px;
   top: -12px;
+}
+
+.active {
+  color: pink;
+  cursor: default;
 }
