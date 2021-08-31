@@ -2,47 +2,64 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Spartan:wght@100;200;300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/622af6dfc3.js"
+      crossorigin="anonymous"
+    ></script>
+    <link href="src/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
-        <ul>
-          <li>July 27, 2021</li>
-          <li>TUE 21:27</li>
-        </ul>
+        <h1>
+          <ul>
+            <li>July 27, 2021</li>
+            <li>TUE 21:27</li>
+          </ul>
+        </h1>
         <img
           src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
           alt="Clear"
         />
+              </br>
         <ul>
-          <li>17 °C | °F</li>
-          <li>Clear</li>
+          <h2>
+            <li>17 °C | °F</li>
+            <li>Clear</li>
+          </h2>
           <li>Precipitation: 0 %</li>
           <li>Humidity: 73 %</li>
           <li>Wind: 2 km/h</li>
         </ul>
+      </br>
         <div class="row">
-          <div class="col-6">Frankfurt am Main</div>
-          <div class="col-6">15 °C/19 °C</div>
+          <div class="col-6"><h3>Frankfurt am Main</h3></div>
+          <div class="col-6">15 °C / 19 °C</div>
         </div>
+        <small
+          ><a
+            href="https://github.com/jchabrny/vanilla-weather-app"
+            target="_blank"
+            >Open-source code</a
+          >
+          by Jacky</small
+        >
       </div>
-      <small
-        ><a
-          href="https://github.com/jchabrny/vanilla-weather-app"
-          target="_blank"
-          >Open-source code</a
-        >, by Jacky</small
-      >
     </div>
     <script src="src/app.js"></script>
   </body>
