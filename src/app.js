@@ -57,7 +57,19 @@ function showWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-let apiKey = "23f36f924c54872c0021ed29214126a5";
-let city = "Frankfurt am Main";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
-axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
+function search(city) {
+  let apiKey = "23f36f924c54872c0021ed29214126a5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric`;
+  axios.get(`${apiUrl}&appid=${apiKey}`).then(showWeather);
+}
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+}
+
+search("Frankfurt am Main");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);

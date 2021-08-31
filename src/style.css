@@ -53,6 +53,17 @@ img {
   text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
+.btn {
+  background-color: lightblue;
+  color: #198754;
+  border: white;
+}
+
+.btn:hover {
+  background-color: #198754;
+  color: lightblue;
+}
+
 .units {
   position: relative;
   font-size: 16px;
