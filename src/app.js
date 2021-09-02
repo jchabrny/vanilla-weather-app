@@ -45,13 +45,13 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   forecast.forEach(function (forecastDay, index) {
-    if (index < 3)
+    if (index > 0 && index < 4)
       forecastHTML =
         forecastHTML +
         `<div class="col-4"><span>${formatDay(
           forecastDay.dt
         )}</span><span>  ${Math.round(
-          forecastDay.temp.max
+          forecastDay.temp.day
         )}°C</span><img src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png" alt=""/></div>`;
@@ -61,10 +61,8 @@ function showForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "23f36f924c54872c0021ed29214126a5";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(showForecast);
 }
 
