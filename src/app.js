@@ -29,22 +29,44 @@ function formatDate(date) {
                 </ul>`;
 }
 
-function showForecast() {
+let now = new Date();
+let date = document.querySelector("#date");
+date.innerHTML = formatDate(now);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["SUN", "MON", "TUE", "WEN", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
+function showForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["FRI", "SAT", "SUN", "MON"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2"><ul><li>${day}</li><li><i class="fas fa-cloud-sun"></i></li></ul></div>`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 3)
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-4"><span>${formatDay(
+          forecastDay.dt
+        )}</span><span>  ${Math.round(
+          forecastDay.temp.max
+        )}°C</span><img src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png" alt=""/></div>`;
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 
-let now = new Date();
-let date = document.querySelector("#date");
-date.innerHTML = formatDate(now);
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "23f36f924c54872c0021ed29214126a5";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 
 function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
@@ -69,6 +91,8 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -113,4 +137,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Frankfurt am Main");
-showForecast();
