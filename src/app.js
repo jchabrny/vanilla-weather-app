@@ -29,15 +29,26 @@ function formatDate(date) {
                 </ul>`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["FRI", "SAT", "SUN", "MON"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2"><ul><li>${day}</li><li><i class="fas fa-cloud-sun"></i></li></ul></div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let now = new Date();
 let date = document.querySelector("#date");
 date.innerHTML = formatDate(now);
 
 function showWeather(response) {
   document.querySelector("#current-city").innerHTML = response.data.name;
-
   celsiusTemperature = response.data.main.temp;
-
   document.querySelector("#current-temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -102,3 +113,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Frankfurt am Main");
+showForecast();
