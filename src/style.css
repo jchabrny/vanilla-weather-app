@@ -6,8 +6,9 @@ body {
 h1,
 h2,
 h3 {
-  color: pink;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  color: black;
+  text-shadow: -1px 0 lightblue, 0 1px lightblue, 1px 0 lightblue,
+    0 -1px lightblue;
 }
 
 h2 {
@@ -30,14 +31,11 @@ li:first-letter {
 }
 
 img {
-  opacity: 0.8;
-  width: 370px;
-  position: relative;
-  top: 30px;
-  left: -140px;
+  width: 200px;
 }
 
 a {
+  color: grey;
   text-decoration: none;
 }
 
@@ -48,23 +46,23 @@ a {
 
 .weather-app {
   padding: 20px;
-  border: 1px solid #dadde1;
+  border: 1px solid black;
   border-radius: 5px;
-  background-image: url(../images/canyon.jpg);
+  background-image: url(../images/blue.jpg);
   background-size: cover;
-  background-position: bottom;
-  color: lightblue;
-  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+  background-position: center;
+  color: whitesmoke;
+  text-shadow: -1px 0 grey, 0 1px grey, 1px 0 grey, 0 -1px grey;
 }
 
 .btn {
   background-color: lightblue;
-  color: #198754;
+  color: whitesmoke;
   border: white;
 }
 
 .btn:hover {
-  background-color: #198754;
+  background-color: whitesmoke;
   color: lightblue;
 }
 
@@ -75,6 +73,6 @@ a {
 }
 
 .active {
-  color: pink;
+  color: black;
   cursor: default;
 }
